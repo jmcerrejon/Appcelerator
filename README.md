@@ -9,7 +9,7 @@ Appcelerator resources I made. See http://appcelerator.com
 
 *postData(url, obj, _callback)* : POST data to an url specified.
 
-*listViewJSon(url, obj)* : populate a ListView element (obj=id) trought a jSON petition.
+*listViewJSon(url, obj, _callback)* : populate a ListView element (obj=id) trought a jSON petition.
 
 **Examples**
 
@@ -23,5 +23,12 @@ helper.getData("http://api.randomuser.me/?nat=es", function(_response) {
  (_response.success) ? alert(_response.data.results[0].user.name.first) : alert('F·$k!: ' + _response.error);
  });
  
-helper.listViewJSon("http://misapuntesde.com/listview_ex.json",$.elementsList);
+helper.listViewJSon("http://misapuntesde.com/listview_ex.json", $.elementsList, function(e) {
+	// get the clicked section
+	var section = $.elementsList.sections[e.sectionIndex];
+	// get the clicked item from that section
+	var item = section.getItemAt(e.itemIndex);
+	// print the item's title
+	Ti.API.info('itemclick: ' + item.properties.title);
+});
 ```
