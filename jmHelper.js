@@ -33,7 +33,6 @@ exports.getData = function(url, _callback) {
 exports.postData = function(url, obj, _callback) {
     var param = JSON.stringify(obj), xhr = Ti.Network.createHTTPClient({
         onload: function() {
-            hello();
             _callback({
                 success: true
             });
