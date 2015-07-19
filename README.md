@@ -9,7 +9,7 @@ Appcelerator resources I made. See http://appcelerator.com
 
 *postData(url, obj, _callback)* : POST data to an url specified.
 
-*listViewJSon(url, obj, _callback)* : populate a ListView element (obj=id) trought a jSON petition.
+*listViewJSon(url, obj, _callback)* : populate a ListView element (obj=id) through a jSON petition.
 
 **Examples**
 
