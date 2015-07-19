@@ -9,10 +9,12 @@ Appcelerator resources I made. See http://appcelerator.com
 
 *postData(url, obj, _callback)* : POST data to an url specified.
 
+*listViewJSon(url, obj)* : populate a ListView element (obj=id) trought a jSON petition.
+
 **Examples**
 
 ```
-	var helper = require('jmHelper');
+var helper = require('jmHelper');
 helper.postData("http://posttestserver.com/post.php", temp, function(_response) {
 	(_response.success) ? alert("Perfect!") : alert('F·$k!: ' + _response.error);
 });
@@ -21,5 +23,5 @@ helper.getData("http://api.randomuser.me/?nat=es", function(_response) {
  (_response.success) ? alert(_response.data.results[0].user.name.first) : alert('F·$k!: ' + _response.error);
  });
  
-}
+helper.listViewJSon("http://misapuntesde.com/listview_ex.json",$.elementsList);
 ```
