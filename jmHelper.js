@@ -69,6 +69,7 @@ exports.listViewJSon = function(url, obj) {
  				obj.appendSection(listSection);
  			}
 			obj.sections[0].setItems(items);
+			obj.addEventListener('itemclick', _callback);
 		}
 	});
 };
